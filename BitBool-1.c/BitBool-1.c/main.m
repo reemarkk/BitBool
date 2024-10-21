@@ -16,11 +16,9 @@ void setbit(BitBool* object , int index, int value){
         printf("Index out of range.\n");
         return;
         }
-        
-    char newbit = value  & 1; //last bit of value
-
-    *object= (*object & ~(1<<index)) | (newbit * (1<<index));
-//sets the bit at index to 1 with | bitwise operator and sets the bit at index to 0 with & and ~ bitwise operator.
+    
+    *object= (*object & ~(1<<index)) | ((value  & 1)* (1<<index));
+//sets the last bit of value at index to 1 with | bitwise operator and sets the last bit of value at index to 0 with & and ~ bitwise operator.
 }
 
 int main(void){
