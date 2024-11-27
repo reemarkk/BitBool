@@ -17,7 +17,7 @@ void setbit(BitBool* object , int index, int value){
         return;
         }
     
-    *object= (*object) | ((value  & 1)* (1<<index));
+    *object= (*object & ~(1<<index)) | ((value  & 1)* (1<<index));
 //sets the last bit of value at index to 1 with | bitwise operator and sets the last bit of value at index to 0 with & and ~ bitwise operator.
 }
 
